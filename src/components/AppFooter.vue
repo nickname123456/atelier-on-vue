@@ -16,4 +16,8 @@
 footer img {
     width: 20px;
 }
+
+footer {
+    margin: 250px 0 0 0;
+}
 </style>

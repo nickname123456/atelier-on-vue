@@ -33,6 +33,11 @@ export default {
             console.log(response.data);
             this.sweatshirts = response.data
         },
+        goCatalog() {
+            this.$router.push({
+                name: 'catalog'
+            })
+        }
 
     },
     mounted() {
@@ -118,7 +123,7 @@ export default {
                 </div>
             </div>
             <div class="view-all-catalog d-flex justify-content-center m-10">
-                <a href="catalog.html" class="btn btn-info">Посмотреть весь каталог</a>
+                <a @click="goCatalog" class="btn btn-info">Посмотреть весь каталог</a>
             </div>
 
         </section>

@@ -33,7 +33,8 @@ let Cloth = mongoose.model('cloth', clothesSchema);
 
 let CategoriesSchema = new mongoose.Schema({
     title: String,
-    description: String
+    description: String,
+    image: String
 });
 let Category = mongoose.model('category', CategoriesSchema);
 
@@ -61,6 +62,10 @@ app.get('/getClothes', async function (req, res) {
 
 
     res.send(clothes);
+});
 
+app.get('/getCategories', async function (req, res){
+    let categories = await Category.find();
+    res.send(categories);
 })
 

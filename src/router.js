@@ -3,7 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 // Компоненты страниц
 import IndexPage from './views/IndexPage.vue';
-import Page2 from './views/Page2.vue';
+import CatalogPage from './views/CatalogPage.vue';
+import CatalogCategoryPage from './views/CatalogCategoryPage.vue';
 
 
 export default createRouter({
@@ -19,9 +20,14 @@ export default createRouter({
             component: IndexPage,
         },
         {
-            path: '/page2',
-            name: 'page2',
-            component: Page2
+            path: '/catalog',
+            name: 'catalog',
+            component: CatalogPage
+        },
+        {
+            path: '/category-:category',
+            name: 'catalog-category',
+            component: CatalogCategoryPage
         }
     ]
 })

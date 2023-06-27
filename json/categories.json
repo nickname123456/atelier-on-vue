@@ -1,26 +1,32 @@
 [
     {
         "title": "Кофты",
-        "description": ""
+        "description": "",
+        "image": "sweater2.jpg"
     },
     {
         "title": "Комбинезоны",
-        "description": ""
+        "description": "",
+        "image": "overalls1.jpg"
     },
     {
         "title": "Футболки",
-        "description": ""
+        "description": "",
+        "image": "t-shirt1.jpg"
     },
     {
         "title": "Спортивные костюмы",
-        "description": ""
+        "description": "",
+        "image": "sport1.jpg"
     },
     {
         "title": "Варежки",
-        "description": ""
+        "description": "",
+        "image": "mittens1.jpg"
     },
     {
         "title": "Куртки",
-        "description": ""
+        "description": "",
+        "image": "jacket1.jpg"
     }
 ]

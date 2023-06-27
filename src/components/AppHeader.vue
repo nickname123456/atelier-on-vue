@@ -1,11 +1,27 @@
 <script>
 
+export default {
+    methods: {
+        goIndex(){
+            this.$router.push({
+                name: 'index'
+            })
+        }, 
+        goCatalog() {
+            this.$router.push({
+                name: 'catalog'
+            })
+        }
+    }
+}
+
+
 </script>
 <template>
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a href="index.html#home" class="navbar-brand">
+                <a @click="goIndex" class="navbar-brand">
                     <img src="src/assets/logo.svg" alt="Логотип" height="45">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -16,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html#home">Главная</a>
+                            <a @click="goIndex" class="nav-link active" aria-current="page">Главная</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-dark dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
@@ -33,14 +49,14 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a href="catalog.html" class="dropdown-item">Весь каталог</a></li>
+                                <li><a @click="goCatalog" class="dropdown-item">Весь каталог</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html#about-us">О нас</a>
+                            <a class="nav-link" aria-current="page" href="/#about-us">О нас</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html#contacts">Контакты</a>
+                            <a class="nav-link" aria-current="page" href="/#contacts">Контакты</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-dark dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
