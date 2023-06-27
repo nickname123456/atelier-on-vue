@@ -2,13 +2,15 @@
 
 // Компоненты
 import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 import { RouterView } from 'vue-router'
 
 // Главная страница
 export default {
 	components: {
 		AppHeader,
-		RouterView
+		RouterView,
+		AppFooter
 	}
 };
 
@@ -22,6 +24,9 @@ export default {
 
 		<!-- Меняющаяся часть -->
 		<router-view></router-view>
+
+		<!-- Подвал страницы -->
+		<app-footer></app-footer>
 	</div>
 </template>
 
