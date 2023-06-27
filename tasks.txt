@@ -40,7 +40,6 @@
 Коллекция CATEGORIES:
     1) title
     2) description
-    3) clothes []
     
 ---СКОРЕЕ ВСЕГО ОСТАВЛЮ НА ПОТОМ----------
 коллекция USERS:

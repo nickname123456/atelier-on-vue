@@ -1,8 +1,44 @@
 
 
 <script>
+import axios from 'axios';
+
 
 export default {
+    data() {
+        return {
+            jackets: [],
+            sweatshirts: []
+        }
+    },
+
+    methods: {
+        async getJackets() {
+            let response = await axios.get('/getClothes', {
+                params: {
+                    category: '649aec7979581bdf5178843d',
+                    count: 4
+                }
+            });
+            console.log(response.data);
+            this.jackets = response.data
+        },
+        async getSweatshirts() {
+            let response = await axios.get('/getClothes', {
+                params: {
+                    category: '649aec7979581bdf51788438',
+                    count: 4
+                }
+            });
+            console.log(response.data);
+            this.sweatshirts = response.data
+        },
+
+    },
+    mounted() {
+        this.getJackets();
+        this.getSweatshirts();
+    }
 
 }
 </script>
@@ -28,8 +64,27 @@ export default {
                     <h3 class="text-center">Куртки</h3>
                     <div id="jackets" class="row row-cols-1 row-cols-md-2 g-3">
 
-                        <!-- Сюда js вставит карточки -->
-
+                        <div v-for="(item, index) in jackets" class="col">
+                            <div class="card">
+                                <img :src="'src/assets/clothes_img/' + item.image" class="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ item.title }}</h4>
+                                    <div class="mb-2" style="max-height: 24px;">
+                                        <p class="card-text"
+                                            style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                            {{ item.desctipion }}</p>
+                                    </div>
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-4">
+                                            <span class="price">{{ item.price }}р</span>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="item.html?id=9" class="btn btn-primary">Подробнее</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -37,7 +92,27 @@ export default {
                     <h3 class="text-center">Кофты</h3>
                     <div id="sweatshirts" class="row row-cols-1 row-cols-md-2 g-3">
 
-                        <!-- Сюда js вставит карточки -->
+                        <div v-for="(item, index) in sweatshirts" class="col">
+                            <div class="card">
+                                <img :src="'src/assets/clothes_img/' + item.image" class="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ item.title }}</h4>
+                                    <div class="mb-2" style="max-height: 24px;">
+                                        <p class="card-text"
+                                            style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                            {{ item.desctipion }}</p>
+                                    </div>
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-4">
+                                            <span class="price">{{ item.price }}р</span>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="item.html?id=9" class="btn btn-primary">Подробнее</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -76,7 +151,8 @@ export default {
             <div class="d-flex justify-content-evenly social-networks mt-4">
                 <a href="https://vk.com/kirillarz" target="_blank"><img src="src/assets/vk_logo.png"
                         alt="Логотип ВКонтакте"></a>
-                <a href="https://t.me/kirillarz" target="_blank"><img src="src/assets/tg_logo.png" alt="Логотип Телеграма"></a>
+                <a href="https://t.me/kirillarz" target="_blank"><img src="src/assets/tg_logo.png"
+                        alt="Логотип Телеграма"></a>
             </div>
         </section>
     </main>
@@ -172,5 +248,4 @@ footer img {
 
 .card:active {
     transform: scale(1.1);
-}
-</style>
+}</style>
