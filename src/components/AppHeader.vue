@@ -20,6 +20,16 @@ export default {
                     category: category
                 }
             })
+        },
+        goLogin() {
+            this.$router.push({
+                name: 'login'
+            })
+        },
+        goProfile() {
+            this.$router.push({
+                name: 'profile'
+            })
         }
     }
 }
@@ -72,7 +82,8 @@ export default {
                                 aria-expanded="false">
                                 <img src="src/assets/profile.png" alt="Логотип с профилем" height="25"></a>
                             <ul class="dropdown-menu">
-                                <li><a href="profile.html" class="dropdown-item">Профиль</a></li>
+                                <li><a @click="goProfile" class="dropdown-item">Профиль</a></li>
+                                <li><a @click="goLogin" class="dropdown-item">Войти</a></li>
                                 <li><a href="signup.html" class="dropdown-item">Регистрация</a></li>
                             </ul>
                         </li>

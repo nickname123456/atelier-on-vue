@@ -25,7 +25,7 @@ export default {
 
             localStorage.email = this.email;
             localStorage.password = this.password;
-            goProfile();
+            this.goProfile();
         },
         goProfile() {
             this.$router.push({
@@ -60,7 +60,7 @@ export default {
                 </div>
                 <div class="row g-3 m-4 justify-content-center">
                     <div class="col-md-4">
-                        <button class="btn btn-primary w-100" type="submit">Зарегистрироваться</button>
+                        <button class="btn btn-primary w-100" type="submit">Войти</button>
                     </div>
                 </div>
             </form>
