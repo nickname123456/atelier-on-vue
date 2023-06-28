@@ -1,0 +1,12 @@
+[{
+    "name": "Кирилл",
+    "surname": "Арзамасцев",
+    "email": "me@kirillarz.ru",
+    "password": "1234",
+    "basket": {
+        "$oid": "649c338fb623027f926b3604"
+    },
+    "favorites": {
+        "$oid": "649c340cb623027f926b360a"
+    }
+}]

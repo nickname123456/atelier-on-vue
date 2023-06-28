@@ -38,6 +38,45 @@ let CategoriesSchema = new mongoose.Schema({
 });
 let Category = mongoose.model('category', CategoriesSchema);
 
+let UsersSchema = new mongoose.Schema({
+    name: String,
+    surname: String,
+    email: String,
+    password: String,
+    basket: {
+        type: mongoose.ObjectId,
+        ref: 'basket'
+    },
+    favorites: {
+        type: mongoose.ObjectId,
+        ref: 'favorites'
+    }
+})
+let User = mongoose.model('user', UsersSchema);
+
+let BasketsSchema = new mongoose.Schema({
+    user_id: {
+        type: mongoose.ObjectId,
+        ref: 'user'
+    },
+    clothes: [{
+        type: mongoose.ObjectId,
+        ref: 'cloth'
+    }]
+})
+let Basket = mongoose.model('basket', BasketsSchema);
+
+let FavoritesSchema = new mongoose.Schema({
+    user_id: {
+        type: mongoose.ObjectId,
+        ref: 'user'
+    },
+    clothes: [{
+        type: mongoose.ObjectId,
+        ref: 'cloth'
+    }]
+})
+let Favorites = mongoose.model('favorites', FavoritesSchema);
 
 
 app.get('/getClothes', async function (req, res) {

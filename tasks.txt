@@ -46,9 +46,10 @@
 коллекция USERS:
     1) name
     2) surname
-    3) password
-    4) basket
-    5) favorites
+    3) email
+    4) password
+    5) basket
+    6) favorites
 
 Коллекция BASKET:
     1) user_id
