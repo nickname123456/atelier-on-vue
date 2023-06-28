@@ -177,6 +177,10 @@ section {
     margin: 100px 0;
 }
 
+#catalog {
+    margin: 100px;
+}
+
 .banner {
     margin-top: 0;
 }
