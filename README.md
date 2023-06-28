@@ -1,29 +1,30 @@
-# 1.first-project
+# Ателье на vue
 
-This template should help get you started developing with Vue 3 in Vite.
+Это мой старый проект, который я переделал на фреймворк vue.
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Как заставить это работать?
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
+### Скачать нужные пакеты
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Запустить фронтенд
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Запустить бэкенд
 
 ```sh
-npm run build
+npm start
 ```
+
+
+## В планах:
+- Добавить страницу "корзина"
+- Добавить страницу "избранное"
+- Добавить к карточкам вещей отметки, находится ли вещь в избранном
+- Уменьшение г-кода)
