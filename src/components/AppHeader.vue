@@ -11,6 +11,15 @@ export default {
             this.$router.push({
                 name: 'catalog'
             })
+        },
+        goCatalogCategory(category) {
+            console.log(category);
+            this.$router.push({
+                name: 'catalog-category',
+                params: {
+                    category: category
+                }
+            })
         }
     }
 }
@@ -38,14 +47,14 @@ export default {
                             <a class="nav-link text-dark dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                 aria-expanded="false">Каталог</a>
                             <ul class="dropdown-menu">
-                                <li><a href="detail_catalog.html?topic=sweatshirts" class="dropdown-item">Кофты</a></li>
-                                <li><a href="detail_catalog.html?topic=overalls" class="dropdown-item">Комбинезоны</a>
+                                <li><a @click="goCatalogCategory('649aec7979581bdf51788438')"  class="dropdown-item">Кофты</a></li>
+                                <li><a @click="goCatalogCategory('649aec7979581bdf51788439')" class="dropdown-item">Комбинезоны</a>
                                 </li>
-                                <li><a href="detail_catalog.html?topic=t_shirts" class="dropdown-item">Футболки</a></li>
-                                <li><a href="detail_catalog.html?topic=tracksuits" class="dropdown-item">Спортивные
+                                <li><a @click="goCatalogCategory('649aec7979581bdf5178843a')" class="dropdown-item">Футболки</a></li>
+                                <li><a @click="goCatalogCategory('649aec7979581bdf5178843b')" class="dropdown-item">Спортивные
                                         костюмы</a></li>
-                                <li><a href="detail_catalog.html?topic=mittens" class="dropdown-item">Варежки</a></li>
-                                <li><a href="detail_catalog.html?topic=jackets" class="dropdown-item">Куртки</a></li>
+                                <li><a @click="goCatalogCategory('649aec7979581bdf5178843c')" class="dropdown-item">Варежки</a></li>
+                                <li><a @click="goCatalogCategory('649aec7979581bdf5178843d')" class="dropdown-item">Куртки</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>

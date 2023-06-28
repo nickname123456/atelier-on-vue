@@ -34,6 +34,11 @@ export default {
     },
     mounted() {
         this.loadClothes()
+    },
+    watch: {
+        $route () {
+            this.loadClothes();
+        }
     }
 
 }
