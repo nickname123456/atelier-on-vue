@@ -69,3 +69,10 @@ app.get('/getCategories', async function (req, res){
     res.send(categories);
 })
 
+
+app.get('/getCloth', async function (req, res){
+    let id = req.query.id;
+    let cloth = await Cloth.findOne({_id: id});
+    res.send(cloth);
+})
+

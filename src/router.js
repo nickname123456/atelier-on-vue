@@ -5,6 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import IndexPage from './views/IndexPage.vue';
 import CatalogPage from './views/CatalogPage.vue';
 import CatalogCategoryPage from './views/CatalogCategoryPage.vue';
+import ClothPage from './views/ClothPage.vue';
 
 
 export default createRouter({
@@ -28,6 +29,11 @@ export default createRouter({
             path: '/category-:category',
             name: 'catalog-category',
             component: CatalogCategoryPage
+        },
+        {
+            path: '/cloth-:id',
+            name: 'cloth',
+            component: ClothPage
         }
     ]
 })

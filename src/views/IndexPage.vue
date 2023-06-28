@@ -37,6 +37,14 @@ export default {
             this.$router.push({
                 name: 'catalog'
             })
+        },
+        goCloth(cloth_id) {
+            this.$router.push({
+                name: 'cloth',
+                params: {
+                    id: cloth_id
+                }
+            })
         }
 
     },
@@ -84,7 +92,7 @@ export default {
                                             <span class="price">{{ item.price }}р</span>
                                         </div>
                                         <div class="col-4">
-                                            <a href="item.html?id=9" class="btn btn-primary">Подробнее</a>
+                                            <a @click="goCloth(item._id)" class="btn btn-primary">Подробнее</a>
                                         </div>
                                     </div>
                                 </div>
@@ -112,7 +120,7 @@ export default {
                                             <span class="price">{{ item.price }}р</span>
                                         </div>
                                         <div class="col-4">
-                                            <a href="item.html?id=9" class="btn btn-primary">Подробнее</a>
+                                            <a @click="goCloth(item._id)" class="btn btn-primary">Подробнее</a>
                                         </div>
                                     </div>
                                 </div>
