@@ -115,3 +115,39 @@ app.get('/getCloth', async function (req, res){
     res.send(cloth);
 })
 
+app.post('/register', async function (req, res) {
+    let {name, surname, email, password} = req.body;
+    let basket = [];
+    let favorites = [];
+
+    let user = new User({
+        name: name,
+        surname: surname,
+        email: email,
+        password: password,
+        basket: basket,
+        favorites: favorites
+    });
+    await user.save();
+    res.send(user)
+});
+
+app.post('/login', async function(req, res) {
+    let {email, password} = req.body;
+
+    let user = await User.findOne({email: email}).populate('basket').populate('favorites');
+
+    if(!user) {
+        res.send('Incorrect email!')
+        return
+    }
+
+    if (user.password == password) {
+        res.send(user) 
+    } else {
+        res.send('Incorrect password!')
+    }
+
+
+
+})

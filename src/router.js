@@ -6,6 +6,7 @@ import IndexPage from './views/IndexPage.vue';
 import CatalogPage from './views/CatalogPage.vue';
 import CatalogCategoryPage from './views/CatalogCategoryPage.vue';
 import ClothPage from './views/ClothPage.vue';
+import LoginPage from './views/LoginPage.vue';
 
 
 export default createRouter({
@@ -34,6 +35,11 @@ export default createRouter({
             path: '/cloth-:id',
             name: 'cloth',
             component: ClothPage
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: LoginPage
         }
     ]
 })
