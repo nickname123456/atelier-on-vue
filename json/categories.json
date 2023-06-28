@@ -1,32 +1,43 @@
-[
-    {
-        "title": "Кофты",
-        "description": "",
-        "image": "sweater2.jpg"
-    },
-    {
-        "title": "Комбинезоны",
-        "description": "",
-        "image": "overalls1.jpg"
-    },
-    {
-        "title": "Футболки",
-        "description": "",
-        "image": "t-shirt1.jpg"
-    },
-    {
-        "title": "Спортивные костюмы",
-        "description": "",
-        "image": "sport1.jpg"
-    },
-    {
-        "title": "Варежки",
-        "description": "",
-        "image": "mittens1.jpg"
-    },
-    {
-        "title": "Куртки",
-        "description": "",
-        "image": "jacket1.jpg"
-    }
-]
+[{
+  "_id": {
+    "$oid": "649aec7979581bdf51788438"
+  },
+  "title": "Кофты",
+  "description": "",
+  "image": "sweater2.jpg"
+},{
+  "_id": {
+    "$oid": "649aec7979581bdf51788439"
+  },
+  "title": "Комбинезоны",
+  "description": "",
+  "image": "overalls1.jpg"
+},{
+  "_id": {
+    "$oid": "649aec7979581bdf5178843a"
+  },
+  "title": "Футболки",
+  "description": "",
+  "image": "t-shirt1.jpg"
+},{
+  "_id": {
+    "$oid": "649aec7979581bdf5178843b"
+  },
+  "title": "Спортивные костюмы",
+  "description": "",
+  "image": "sport1.jpg"
+},{
+  "_id": {
+    "$oid": "649aec7979581bdf5178843c"
+  },
+  "title": "Варежки",
+  "description": "",
+  "image": "mittens1.jpg"
+},{
+  "_id": {
+    "$oid": "649aec7979581bdf5178843d"
+  },
+  "title": "Куртки",
+  "description": "",
+  "image": "jacket1.jpg"
+}]
