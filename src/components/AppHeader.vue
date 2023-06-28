@@ -1,12 +1,37 @@
 <script>
+import axios from 'axios';
 
 export default {
+    data() {
+        return {
+            clothes: [],
+            search_clothes: [],
+            search: ''
+        }
+    },
     methods: {
-        goIndex(){
+        async loadData() {
+            let response = await axios.get('/getClothes');
+            this.clothes = response.data;
+            console.log(this.clothes);
+        },
+
+        updSearch() {
+            let search = this.search.trim().toLowerCase();
+            this.search_clothes = []
+
+            for (let i = 0; i < this.clothes.length; i++) {
+                if (this.clothes[i].title.toLowerCase().includes(search)) {
+                    this.search_clothes.push(this.clothes[i])
+                }
+            }
+        },
+
+        goIndex() {
             this.$router.push({
                 name: 'index'
             })
-        }, 
+        },
         goCatalog() {
             this.$router.push({
                 name: 'catalog'
@@ -30,7 +55,23 @@ export default {
             this.$router.push({
                 name: 'profile'
             })
+        },
+        goRegistration() {
+            this.$router.push({
+                name: 'signup'
+            })
+        },
+        goCloth(cloth_id) {
+            this.$router.push({
+                name: 'cloth',
+                params: {
+                    id: cloth_id
+                }
+            })
         }
+    },
+    mounted() {
+        this.loadData()
     }
 }
 
@@ -57,14 +98,20 @@ export default {
                             <a class="nav-link text-dark dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                 aria-expanded="false">Каталог</a>
                             <ul class="dropdown-menu">
-                                <li><a @click="goCatalogCategory('649aec7979581bdf51788438')"  class="dropdown-item">Кофты</a></li>
-                                <li><a @click="goCatalogCategory('649aec7979581bdf51788439')" class="dropdown-item">Комбинезоны</a>
+                                <li><a @click="goCatalogCategory('649aec7979581bdf51788438')"
+                                        class="dropdown-item">Кофты</a></li>
+                                <li><a @click="goCatalogCategory('649aec7979581bdf51788439')"
+                                        class="dropdown-item">Комбинезоны</a>
                                 </li>
-                                <li><a @click="goCatalogCategory('649aec7979581bdf5178843a')" class="dropdown-item">Футболки</a></li>
-                                <li><a @click="goCatalogCategory('649aec7979581bdf5178843b')" class="dropdown-item">Спортивные
+                                <li><a @click="goCatalogCategory('649aec7979581bdf5178843a')"
+                                        class="dropdown-item">Футболки</a></li>
+                                <li><a @click="goCatalogCategory('649aec7979581bdf5178843b')"
+                                        class="dropdown-item">Спортивные
                                         костюмы</a></li>
-                                <li><a @click="goCatalogCategory('649aec7979581bdf5178843c')" class="dropdown-item">Варежки</a></li>
-                                <li><a @click="goCatalogCategory('649aec7979581bdf5178843d')" class="dropdown-item">Куртки</a></li>
+                                <li><a @click="goCatalogCategory('649aec7979581bdf5178843c')"
+                                        class="dropdown-item">Варежки</a></li>
+                                <li><a @click="goCatalogCategory('649aec7979581bdf5178843d')"
+                                        class="dropdown-item">Куртки</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -84,18 +131,20 @@ export default {
                             <ul class="dropdown-menu">
                                 <li><a @click="goProfile" class="dropdown-item">Профиль</a></li>
                                 <li><a @click="goLogin" class="dropdown-item">Войти</a></li>
-                                <li><a href="signup.html" class="dropdown-item">Регистрация</a></li>
+                                <li><a @click="goRegistration" class="dropdown-item">Регистрация</a></li>
                             </ul>
                         </li>
                     </ul>
                     <div class="search_container">
                         <form class="d-flex">
-                            <input id="search" class="form-control me-2" type="search" placeholder="Поиск"
-                                aria-label="Поиск">
+                            <input v-model="search" @input="updSearch" id="search" class="form-control me-2" type="search"
+                                placeholder="Поиск" aria-label="Поиск">
                             <!-- <button class="btn btn-outline-success" type="submit">Поиск</button> -->
                         </form>
-                        <ul class="search_result">
-                            <!-- Здесь будет результат поиска -->
+                        <ul v-if="search" class="search_result">
+                            <li v-for="(item, index) in search_clothes">
+                                <a @click="goCloth(item._id)">{{ item.title }}</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -131,5 +180,4 @@ export default {
     .search_container li {
         width: 206.4px;
     }
-}
-</style>
+}</style>
