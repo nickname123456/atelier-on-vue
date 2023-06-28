@@ -8,6 +8,7 @@ import CatalogCategoryPage from './views/CatalogCategoryPage.vue';
 import ClothPage from './views/ClothPage.vue';
 import LoginPage from './views/LoginPage.vue';
 import ProfilePage from './views/ProfilePage.vue';
+import SignupPage from './views/SignupPage.vue';
 
 
 export default createRouter({
@@ -46,6 +47,11 @@ export default createRouter({
             path: '/profile',
             name: 'profile',
             component: ProfilePage
+        },
+        {
+            path: '/signup',
+            name: 'signup',
+            component: SignupPage
         }
     ]
 })

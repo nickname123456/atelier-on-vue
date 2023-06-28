@@ -117,18 +117,33 @@ app.get('/getCloth', async function (req, res){
 
 app.post('/register', async function (req, res) {
     let {name, surname, email, password} = req.body;
-    let basket = [];
-    let favorites = [];
+    // let basket = '';
+    // let favorites = '';
 
     let user = new User({
         name: name,
         surname: surname,
         email: email,
-        password: password,
-        basket: basket,
-        favorites: favorites
+        password: password
     });
     await user.save();
+
+    let basket = new Basket({
+        user_id: user._id,
+        clothes: []
+    });
+    await basket.save()
+
+    let favorites = new Favorites({
+        user_id: user._id,
+        clothes: []
+    });
+    await favorites.save()
+
+    user.basket = basket._id;
+    user.favorites = favorites._id;
+    await user.save()
+
     res.send(user)
 });
 
